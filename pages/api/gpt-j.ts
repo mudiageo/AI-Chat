@@ -5,6 +5,7 @@ import { URLSearchParams } from 'url'
 import { stringifyWithFloats } from "../../utils/stringifyWithFloats";
 
 async function query(data: any) {
+  console.log('styv')
   const response = await fetch(
     "http://api.vicgalle.net:5000/generate",
     {
