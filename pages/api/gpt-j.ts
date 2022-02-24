@@ -5,7 +5,7 @@ import { URLSearchParams } from 'url'
 import { stringifyWithFloats } from "../../utils/stringifyWithFloats";
 
 async function query(data: any) {
-  console.log('styv')
+  
   const response = await fetch(
     "http://api.vicgalle.net:5000/generate",
     {
@@ -14,6 +14,8 @@ async function query(data: any) {
         body: data,
     }
   );
+  
+   console.log('styv')
   const result = await response.json();
   return result;
 }
