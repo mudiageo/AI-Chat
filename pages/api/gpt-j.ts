@@ -67,7 +67,7 @@ export default async function handler(
         body: req.body
     }
   );
-    return res.status(200).send({ text: response.body.text.split(stop_sequence)[0] })
+    return res.status(200).send({ text: response.body.text})
   }
   catch(error) {
     console.log(response, error)
