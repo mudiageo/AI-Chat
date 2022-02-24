@@ -68,8 +68,9 @@ export default async function handler(
     }
       
   );
-   
-    let text = response.body.text || 'hi'
+    let result = await response.json()
+
+    let text = result.body.text || 'hi'
     
     return res.status(200).send({ text: text})
   }
