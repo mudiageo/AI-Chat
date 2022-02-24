@@ -6,7 +6,7 @@ import { stringifyWithFloats } from "../../utils/stringifyWithFloats";
 
 async function query(data: any) {
   const response = await fetch(
-    "https://api.vicgalle.net:5000/generate",
+    "http://api.vicgalle.net:5000/generate",
     {
        
         method: "POST",
