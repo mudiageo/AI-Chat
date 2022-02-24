@@ -76,6 +76,6 @@ export default async function handler(
   }
   catch(error) {
     console.log(response, error)
-    res.status(500).send({ text: `Errors:\n\n${response.error.join('\n\n')}` ?? "Sorry, the website is experiencing a server error right now.\nplease try again later." })
+//    res.status(500).send({ text: `Errors:\n\n${response.error.join('\n\n')}` ?? "Sorry, the website is experiencing a server error right now.\nplease try again later." })
   }}
 
