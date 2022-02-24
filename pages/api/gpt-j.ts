@@ -66,8 +66,12 @@ export default async function handler(
         method: "POST",
         body: req.body
     }
+      
   );
-    return res.status(200).send({ text: response.body.text})
+   
+    let text = response.body.text || 'hi'
+    
+    return res.status(200).send({ text: text})
   }
   catch(error) {
     console.log(response, error)
