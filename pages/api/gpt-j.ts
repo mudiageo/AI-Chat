@@ -10,7 +10,7 @@ async function query(data: any) {
     {
        
         method: "POST",
-        body: stringifyWithFloats({ temperature: 'float', top_p: 'float' })(data),
+        body: data,
     }
   );
   const result = await response.json();
@@ -55,8 +55,8 @@ export default async function handler(
   let response
 
   try {
-    response = await query({inputs: context, parameters: params})
-    return res.status(200).send({ text: response[0].generated_text.split(stop_sequence)[0] })
+    response = await query(req.body)
+    return res.status(200).send({ text: response[0].text.split(stop_sequence)[0] })
   }
   catch(error) {
     console.log(response, error)
