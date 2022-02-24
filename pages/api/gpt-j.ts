@@ -6,9 +6,9 @@ import { stringifyWithFloats } from "../../utils/stringifyWithFloats";
 
 async function query(data: any) {
   const response = await fetch(
-    "https://api-inference.huggingface.co/models/gpt2",
+    "https://api.vicgalle.net:5000/generate",
     {
-        headers: { Authorization: `Bearer ${process.env.hf_token}` },
+       
         method: "POST",
         body: stringifyWithFloats({ temperature: 'float', top_p: 'float' })(data),
     }
