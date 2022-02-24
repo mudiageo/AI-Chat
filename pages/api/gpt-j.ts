@@ -58,11 +58,19 @@ export default async function handler(
   let response
 
   try {
-    response = await query(req.body)
+    
+    response = await fetch(
+    "http://api.vicgalle.net:5000/generate",
+    {
+       
+        method: "POST",
+        body: req.body
+    }
+  );
     return res.status(200).send({ text: response[0].text.split(stop_sequence)[0] })
   }
   catch(error) {
     console.log(response, error)
     res.status(500).send({ text: `Errors:\n\n${response.error.join('\n\n')}` ?? "Sorry, the website is experiencing a server error right now.\nplease try again later." })
-  }
-}
+  }}
+
